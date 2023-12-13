@@ -120,6 +120,8 @@ algolia:
   field:
     - content:strip:truncate,0,500
     - excerpt:strip
+    - title
+    - permalink
     - tags
     - articles
     - categories
@@ -140,3 +142,6 @@ tag_plugins:
     iconfont: //at.alicdn.com/t/font_2264842_3izu8i5eoc2.js #参看https://akilar.top/posts/d2ebecef/
     carousel: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js
     tag_plugins_css: https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css
+
+plugins:
+  - hexo-algoliasearch

@@ -307,16 +307,6 @@ katex:
   hide_scrollbar: true
 
 # search 
-# Local search
-local_search:
-  enable: false
-  # Preload the search data when the page loads.
-  preload: false
-  # Show top n results per article, show all results by setting to -1
-  top_n_per_article: 1
-  # Unescape html strings to the readable one.
-  unescape: false
-  CDN:
 
 # comments
 comments:
@@ -357,6 +347,18 @@ algolia_search:
   enable: true
   hits:
     per_page: 6
+
+# Local search
+local_search:
+  enable: true
+  # Preload the search data when the page loads.
+  preload: false
+  # Show top n results per article, show all results by setting to -1
+  top_n_per_article: 1
+  # Unescape html strings to the readable one.
+  unescape: false
+  CDN:
+
 
 theme_color:
   enable: true
