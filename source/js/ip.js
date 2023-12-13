@@ -1,0 +1,2 @@
+/* <div id="ip"></div><div id="cname"></div>L'enfer, c'est les autres! <script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8"></script><script> var parent1 = document.getElementById('ip'); var child1 = document.createElement("span");child1.textContent = "您的ip是 "+returnCitySN.cip;parent1.append(child1);var parent = document.getElementById('cname');var child = document.createElement("span");child.textContent ="您的地址是 "+returnCitySN.cname;parent.append(child);</script>     */
+// 参考 https://iitii.github.io/2020/06/20/1/

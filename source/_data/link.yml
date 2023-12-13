@@ -1,0 +1,46 @@
+class:
+  class_name: 友情鏈接
+  link_list:
+    1:
+      name: 樊大的小站
+      link: http://www.fjtbkyc.net/
+      avatar: http://www.fjtbkyc.net/data/uploads/20210606/fd6a79dbafb704c6177b6d80ff4cf43f.ico
+      descr: 来自神奇的未知领域，等待你的探索
+    2:
+      name: super_star
+      link: http://zxin.site/
+      avatar: http://zxin.site/images/pdx.jpg
+      descr: 算法,学霸  
+    3:
+      name: DingShiYi
+      link: https://www.dingshiyi.top/
+      avatar: https://www.dingshiyi.top/favicon.ico
+      descr: 前端,腾讯大佬
+    4: 
+      name: lazycat
+      link: http://www.imod.top/
+      avatar: https://pic.cr173.com/up/2017-8/2017841818322084.jpg
+      descr: 大数据,java,后端,阿里大佬
+class2:
+   class_name: 常用网站
+   link_list:
+     1:
+       name: bilibili
+       link: https://www.bilibili.com/
+       avatar: https://www.bilibili.com/favicon.ico?v=1
+       descr: 学习网站
+     2:
+       name: notion笔记
+       link: https://www.notion.so/
+       avatar: https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F05da1bd2-2def-4a6a-bed3-1c1d5552735d%2Fdatabasepng.png?table=block&id=5afb6b5c-ce70-4975-9159-9d4500a09a5a&spaceId=5bb1925a-df7d-4948-8c06-dbc2ea0db2d8&width=40&userId=65c9aea8-9e43-4cbb-9ad7-c43985214c59&cache=v2
+       descr: 超好用的在线笔记
+     3:
+      name: ACWing
+      link: https://www.acwing.com/
+      avatar: https://cdn.acwing.com/static/web/img/favicon.ico
+      descr: 算法学习网站
+     4:
+      name: 京东cookie更新网站
+      link: http://39.104.79.59/
+      avatar: https://www.jd.com/favicon.ico
+      descr: cookie更新网站
