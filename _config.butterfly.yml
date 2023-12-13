@@ -36,7 +36,6 @@ code_word_wrap: false
 social:
   fab fa-github: https://github.com/sherlockouo || Github || '#24292e'
   fas fa-envelope: mailto:wdf.coder@gmail.com || Email || '#4a7dbe'
-  fas fa-video: https://space.bilibili.com/85902173 || BILIBILI
 
 # Image (圖片設置)
 # --------------------------------------
@@ -400,3 +399,17 @@ google_adsense:
   js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
   client: ca-pub-5262775979936250 # 填入个人识别码
   enable_page_level_ads: true
+
+# 简体-繁体
+translate:
+  enable: true
+  # 默认按钮显示文字(网站是简体，应设置为'default: 繁')
+  default: 简
+  #网站默认语言，1: 繁体中文, 2: 简体中文
+  defaultEncoding: 1
+  #延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+  translateDelay: 0
+  #当文字是简体时，按钮显示的文字
+  msgToTraditionalChinese: "繁"
+  #当文字是繁体时，按钮显示的文字
+  msgToSimplifiedChinese: "简"
