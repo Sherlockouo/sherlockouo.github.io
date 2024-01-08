@@ -1,0 +1,465 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>操作系统调度 | SherlockOuO</title><meta name="author" content="SherlockOuO"><meta name="copyright" content="SherlockOuO"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="操作系统调度 Created: January 6, 2022 4:10 PM Tags: 系统调度, 调度算法 一般来说，一个系统会同时处理多个请求，但是其资源是优先的，调度就是用来协调每个请求对资源的使用的方法。调度中存在：优先级，时间片，截止时间等概念。 任务调度（task scheduling 也称 CPU 调度）负责调度可执行的任务对 CPU 的使用； I&#x2F;O 调度负责对应该以何种顺序向">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统调度">
+<meta property="og:url" content="https://sherlockouo.github.io/2022/01/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%B0%83%E5%BA%A6%20145b08dfb068466a8b142222016c6785/index.html">
+<meta property="og:site_name" content="SherlockOuO">
+<meta property="og:description" content="操作系统调度 Created: January 6, 2022 4:10 PM Tags: 系统调度, 调度算法 一般来说，一个系统会同时处理多个请求，但是其资源是优先的，调度就是用来协调每个请求对资源的使用的方法。调度中存在：优先级，时间片，截止时间等概念。 任务调度（task scheduling 也称 CPU 调度）负责调度可执行的任务对 CPU 的使用； I&#x2F;O 调度负责对应该以何种顺序向">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://sherlockouo.github.io/img/old/%E5%86%B0%E7%A2%9B%E6%B9%96%E9%9B%AA%E5%B1%B1.jpg">
+<meta property="article:published_time" content="2022-01-24T09:30:42.000Z">
+<meta property="article:modified_time" content="2024-01-08T13:20:51.115Z">
+<meta property="article:author" content="SherlockOuO">
+<meta property="article:tag" content="操作系统">
+<meta property="article:tag" content="OS">
+<meta property="article:tag" content="读书笔记">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sherlockouo.github.io/img/old/%E5%86%B0%E7%A2%9B%E6%B9%96%E9%9B%AA%E5%B1%B1.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://sherlockouo.github.io/2022/01/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%B0%83%E5%BA%A6%20145b08dfb068466a8b142222016c6785/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: 'ca-pub-5262775979936250',
+  enable_page_level_ads: 'true'
+});</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: {"appId":"VMPQBST4WX","apiKey":"69f27bdb88194652fb5b116e7548eadb","indexName":"hexo","hits":{"per_page":6},"languages":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}.","hits_stats":"${hits} results found in ${time} ms"}},
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":100,"languages":{"author":"Author: SherlockOuO","link":"Link: ","source":"Source: SherlockOuO","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '操作系统调度',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-01-08 13:20:51'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">65</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">106</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tag"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> InterestingThings</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/air-condition/"><i class="fa-fw fas fa-heat"></i><span> air-condition</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/milestone/"><i class="fa-fw fas fa-flag"></i><span> 里程</span></a></div><div class="menus_item"><a class="site-page" href="/todolist/"><i class="fa-fw fas fa-check"></i><span> TodoList</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg fixed" id="page-header" style="background-image: url('/img/old/%E5%86%B0%E7%A2%9B%E6%B9%96%E9%9B%AA%E5%B1%B1.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="SherlockOuO"><span class="site-name">SherlockOuO</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tag"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> InterestingThings</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/air-condition/"><i class="fa-fw fas fa-heat"></i><span> air-condition</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/milestone/"><i class="fa-fw fas fa-flag"></i><span> 里程</span></a></div><div class="menus_item"><a class="site-page" href="/todolist/"><i class="fa-fw fas fa-check"></i><span> TodoList</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">操作系统调度<a class="post-edit-link" href="https://github.com/sherlockouo/hexo/edit/dev/source/_posts/操作系统/操作系统调度 145b08dfb068466a8b142222016c6785.md" title="Edited on" target="_blank"><i class="fas fa-pencil-alt"></i></a></h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-01-24T09:30:42.000Z" title="Created 2022-01-24 09:30:42">2022-01-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-01-08T13:20:51.115Z" title="Updated 2024-01-08 13:20:51">2024-01-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">6.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>20mins</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="操作系统调度"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>操作系统调度</h1>
+<p>Created: January 6, 2022 4:10 PM<br>
+Tags: 系统调度, 调度算法</p>
+<p>一般来说，一个系统会同时处理多个请求，但是其资源是优先的，调度就是用来协调每个请求对资源的使用的方法。调度中存在：优先级，时间片，截止时间等概念。</p>
+<p>任务调度（task scheduling 也称 CPU 调度）负责调度可执行的任务对 CPU 的使用；</p>
+<p>I/O 调度负责对应该以何种顺序向存储设备发起 I/O 请求进行调度；</p>
+<p>内存管理也是一种调度，内存管理将虚拟内存映射到物理内存，物理内存是有限的资源，当需要使用的虚拟内存超过物理内存容量时，换页机制就是在对哪部分物理内页的内容可以留在内存中进行调度，并将剩余物理页上到的内容写回磁盘，进而复用那些剩余的物理页。</p>
+<p>一般调度器会通过维护运行队列（run queue）的方式来管理任务，Linux 调度器会用红黑树来实现运行队列，任务在执行时若触发一定条件，则会停止执行，这些条件可以是：</p>
+<ul>
+<li>该任务执行了指定的时间片后，应让其他任务在当前 CPU 核心上执行</li>
+<li>该任务发起了 I/O 请求，在 I/O 返回前，它不会继续执行</li>
+<li>该任务主动停止执行或进入睡眠</li>
+<li>该任务被系统中断打断，系统优先处理中断而暂缓该任务的执行</li>
+</ul>
+<p>调度器主要作用是做出调度决策，整个系统通过该决策进而决定如何调度，这些调度决策包括：</p>
+<ul>
+<li>从运行队列中选择下一个运行任务</li>
+<li>决定执行该任务的 CPU 核心</li>
+<li>决定该任务被允许执行的时间，即时间片</li>
+</ul>
+<p>调度器的设计问题主要可以归纳为两类：</p>
+<ul>
+<li>调度器应该做出什么样的调度决策（what）？</li>
+<li>调度器应该如何做出符合预期的调度决策（how）？</li>
+</ul>
+<p>常用的调度指标包括：</p>
+<ul>
+<li>性能
+<ul>
+<li>吞吐量、周转时间、响应时间、调度开销</li>
+</ul>
+</li>
+<li>非性能
+<ul>
+<li>公平性、资源利用率</li>
+</ul>
+</li>
+<li>特殊
+<ul>
+<li>实时性、能耗</li>
+</ul>
+</li>
+</ul>
+<p>调度器面临的挑战：</p>
+<ul>
+<li>调度指标多样性</li>
+<li>调度可参考的信息有限</li>
+<li>任务间的复杂交互</li>
+<li>许多方便存在权衡</li>
+</ul>
+<p>调度器权衡包括但不限于一下几点：</p>
+<ul>
+<li>调度开销与调度效果</li>
+<li>优先级与公平性</li>
+<li>性能与能耗</li>
+</ul>
+<p>在任务调度中，长期、中期和短期调度相互协作，分别以不同的目标对进程进行调度。</p>
+<p><strong>长期任务：限制进程数量</strong></p>
+<p>触发间隔较长，它粗粒度的决定是否应该将一个新的进程纳入调度管理，负责增加系统中可被调度的进程的数量；</p>
+<p><strong>中期调度：避免内存使用过多</strong></p>
+<p>触发相对频繁，它辅助换页机制，负责限制系统中可被调度的进程的数量；</p>
+<p><strong>短期调度：负责进程在就绪，运行，阻塞状态间得转换</strong></p>
+<p>触发最为频发，它负责细粒度的调度进程的执行，做出相应的调度决策。</p>
+<p>调度流程：</p>
+<ol>
+<li>在传统操作系统中，批处理任务被发起后，其信息会被存入磁盘中的批处理队列，等待被长期调度允许进入系统；</li>
+<li>长期调度负责从批处理队列中选取下一个可被调度的批处理任务，为其创建对应的进程，将进程设为预备状态并放入运行队列；</li>
+<li>由于交互任务和实时任务一般都有比较高的时延要求，需要在一定时间内返回结果。所以这两类任务一般不会被长期调度管理。系统会直接为他们创建对应的进程，将进程设为预备状态并放入运行队列；</li>
+<li>通过短期调度的决策，运行队列中的进程会被调度到 CPU 上执行，此时进程为运行状态；</li>
+<li>当进程运行完一个时间片后，短期调度会将其重新置为预备状态，并放回运行队列；</li>
+<li>当运行中的进程发起 I/O 请求，等待用户输入或进入睡眠，因而需要被阻塞时，会被放入阻塞队列，短期调度会选择其他进程进行调度；</li>
+<li>当进程等待的事件被触发后，操作系统直接将对应的进程移出阻塞队列，并将其置为预备状态，重新放入运行队列；</li>
+<li>如果系统中的内存使用量偏大，就会触发换页机制，中期调度会挂起处于预备状态、阻塞状态的进程，将其置为挂起预备状态/挂起阻塞状态并放入挂起运行队列/挂起阻塞队列中；</li>
+<li>处于挂起阻塞状态的进程，如果其等待的时间被处罚，会被置为挂起预备状态并被放入挂起运行队列中；</li>
+<li>当系统的内存使用不再紧张时，中期调度会激活挂起运行队列/挂起阻塞队列中的进程，将其置为预备状态/阻塞状态并放回运行队列/阻塞队列中；</li>
+<li>当进程结束后，会进入终止状态并最终被回收</li>
+</ol>
+<h1><strong>单核调度策略</strong></h1>
+<p><strong>先到先得（FCFS）</strong></p>
+<p>弊端：</p>
+<ul>
+<li>在长短任务混合的场景下对短任务不友好</li>
+<li>对 I/O 密集型任务不友好</li>
+</ul>
+<p><strong>最短任务优先（SJF）</strong></p>
+<p>弊端：</p>
+<ul>
+<li>必须预知任务的运行时间</li>
+<li>其表现严重依赖与任务到达时间点</li>
+<li>最短完成时间任务优先（STCF），SJF 的抢占式版本</li>
+</ul>
+<p>弊端：</p>
+<ul>
+<li>必须预知任务的运行时间</li>
+<li>长任务饥饿</li>
+</ul>
+<p><strong>时间片轮转（RR）</strong></p>
+<p>对于 RR 策略，一个关键点是它的时间片该如何选取。</p>
+<p>弊端：</p>
+<ul>
+<li>在任务运行时间相似的场景下平均周转时间高，RR 一定程度上保证了每个任务之间的公平性，同时也可获得良好的响应时间，但是在特定场景下，任务的平均周转时间可能较差。</li>
+</ul>
+<h2 id="优先级调度"><strong>优先级调度</strong></h2>
+<p><strong>多级队列（MLQ）</strong></p>
+<p>每个任务会被分配预先设置好的优先级，每个优先级对应一个队列，任务会被存储在对应的优先级队列中。如果优先级不同的任务同时处于预备状态，那么调度器应该倾向于调度优先级较高的任务，因此一个任务必须等到所有优先级比它高的任务调度完成才可以被调度。处于相同优先级队列的任务，它们内部的调度方式没有统一标准，可以针对性的为不同队列采用不同的调度策略，如 FCFS 或 RR。</p>
+<p>在设置 MLQ 策略的任务优先级时，需要注意将 I/O 密集型任务的优先级提高，保证 I/O 资源利用率。</p>
+<p>弊端：</p>
+<ul>
+<li>低优先级任务饥饿，如果调度器需要保证一定的公平性，需要引入额外的机制监控任务等待时间，为等待时间过长（如超过一定的阈值）的任务提升优先级</li>
+<li>优先级反转，在程序执行时，多个任务可能会对同一份数据产生竞争，因此任务会使用锁来保护共享数据。假设存在 3 个任务A，B，C，他们的优先级是 ABC，任务 C 在运行时持有一把锁，然后被高优先级的 A 抢占了，A 也想申请任务 C 持有的锁，但是申请失败，因此进入阻塞状态等待 C 释放锁，此时 BC 都处于可以运行状态，B 优先级高，因此 B 先运行，观察该情况，会发现 B 的优先级好像高于 A，这一问题称为优先级反转。一个可行的解决方案是优先级继承。</li>
+</ul>
+<p><strong>多级反馈队列（MLFQ）</strong></p>
+<p>在 MLQ 基础上，增加了动态设置任务优先级的策略，MLFQ 策略也会维护多个优先级队列，处于相同优先级的任务则采用 RR 策略执行，优先级的动态设置策略如下：</p>
+<ul>
+<li>短任务拥有更高的优先级，好处：1. 可以有更好的平均周转时间；2. I/O 密集型任务一般在 CPU 中执行的时间很短，给短任务提高优先级也相当于提高 I/O 密集型任务的优先级，提高系统的 I/O 资源利用率；3. 交互式任务一般是短任务，降低响应时间。根据每个任务（多次）执行时间来判断是短任务还是长任务。当任务进入系统中，假设任务是短任务，MLFQ 会为每个任务队列设置任务的最大运行时间，如果超过了最大时间，就会将该任务的优先级减一。</li>
+<li>低优先级的任务采用更长的时间片，为了减少任务的调度次数，优先级月底的任务，其时间片越长，由于 MLFQ 策略支持抢占式调度，无须担心低优先级的任务阻塞新进入系统的任务。</li>
+<li>定时将所有任务的优先级提升至最高，避免出现低优先级任务饥饿。</li>
+</ul>
+<p><strong>公平共享调度</strong></p>
+<ul>
+<li>“公平”是指任务对资源的使用符合用户预期</li>
+</ul>
+<p>公平共享调度会量化任务对系统资源的占有比例，从而实现对资源的公平调度。用份额（share）来量化每个任务对 CPU 时间的使用。份额支持曾计划的分配方式，可以将任务分组，以组为单位分配份额，任务组会在组内进一步分摊该组所拥有的份额。</p>
+<p>优先级和份额都表示了任务在系统中的重要程度，但是目的是不同的。优先级调度是为了优化任务的周转时间、响应时间和资源利用率而设计的。不同任务的优先级只能用于相互比较，表明任务执行的先后。而基于份额的公平共享调度是为了让每个任务都能使用它应该获得的系统资源。分隔的值明确对应了任务应使用的系统资源比例。</p>
+<p>彩票调度，彩票转让，彩票货币，彩票通胀。弊端：</p>
+<ul>
+<li>随机数所带来的问题，彩票调度通过使用随机的方式实现了一个简单并且近似于公平共享的调度器，然而，随机数会导致某一任务占用 CPU 时间的比例，需要在该任务经历多次调度后，才能趋近于该任务的份额在所有任务总份额的比例。只有调度次数足够多，彩票调度效果才接近公平。步幅调度，采用确定性的方式调度任务，核心概念是步幅。引入虚拟时间的概念。为了让虚拟时间短的任务能够“追赶”虚拟时间长的任务，使用虚拟时间的调度策略一般会选择调度所有任务中虚拟时间最少的任务。步幅调度通过设置虚拟时间的方式，让任务在每次调度时增加一定的虚拟时间，即步幅。经历虚拟时间相同的任务，它们使用的 CPU 时间之比就是步幅的倒数之比，换句话说，任务的份额之比正对应了任务的步幅的倒数之比。在真实的系统中，由于任务可能在任意时间进入系统，因此任务经历的虚拟时间不能为 0，而应该设置为当前所有任务的最小虚拟时间值，放置新进入的任务长时间占有 CPU。</li>
+</ul>
+<p><strong>实时调度</strong></p>
+<p>根据任务超过截止时间所造成的后果分类：</p>
+<ul>
+<li>硬实时任务，该类任务必须在截止时间前完成</li>
+<li>软实时任务，该类任务可以偶尔超过截止时间完成</li>
+</ul>
+<p>根据被触发的时间分类：</p>
+<ul>
+<li>周期任务，指到达系统时间遵循一定周期的任务</li>
+<li>偶发任务，指不会周期性的到达系统的任务，且还要满足连续两个相同偶发任务到达系统的时间间隔有最小值，即系统不会在同一时刻处理两个相同的偶发任务。偶发任务通常是硬实时任务。</li>
+<li>非周期性任务，指到达系统时间随机的任务，通常是软实时任务。</li>
+</ul>
+<h3 id="多核调度策略"><strong>多核调度策略</strong></h3>
+<p>在多核上进行调度时，需要回答以下三个问题：</p>
+<ul>
+<li>当前应该调度哪个/哪些任务？</li>
+<li>每个调度的任务应该在哪个 CPU 核心上执行？</li>
+<li>每个调度的任务应该执行多久？</li>
+</ul>
+<h3 id="多核调度策略-2"><strong>多核调度策略</strong></h3>
+<p>在多核上进行调度时，需要回答以下三个问题：</p>
+<ul>
+<li>当前应该调度哪个/哪些任务？</li>
+<li>每个调度的任务应该在哪个 CPU 核心上执行？</li>
+<li>每个调度的任务应该执行多久？</li>
+</ul>
+<p><strong>负载分担</strong></p>
+<p>设想多核共享一个全局运行队列，当一个 CPU 核心需要调度任务时，根据给定的调度策略，决定全局运行队列中下一个由它执行的任务。给定的调度策略可以是任一一种单核调度策略，这种方法称为负载分担，因为系统的负载是被所有的 CPU 核心分担的。</p>
+<p>优点：</p>
+<ul>
+<li>设计实现简单，通过使用负载分担，可以将多核调度问题规约为单核调度问题，使用已有的单核调度策略和单核调度器，就可以实现一个多核的全局调度器</li>
+<li>每个 CPU 核心都会分担系统的负载，不会出现 CPU 资源浪费的情况，一个 CPU 核心执行完当前任务后，它会从全局任务队列中再选取一个任务执行，只要当前系统还有可以执行的任务，每个 CPU 核心都能获取到任务执行</li>
+</ul>
+<p>问题：</p>
+<ul>
+<li>多核共享一个全局运行队列的同步开销</li>
+<li>任务在多个 CPU 核心间来回切换的开销，包括重新载入缓存，TLB 刷新等</li>
+</ul>
+<p><strong>协同调度</strong></p>
+<p>为了满足对蚁族任务进行调度的需求，协同调度的概念应运而生。协同调度的目的是尽可能让一组任务并行执行，避免调度器同时调度有依赖关系的两组任务，同时避免关联任务执行效率降低的问题。</p>
+<p><strong>协同调度的经典策略是群组调度</strong>。</p>
+<p><strong>两级调度：全局 和 本地调度构成</strong></p>
+<p>为了减少任务在不同 CPU 核心上切换执行的开销，每个任务应尽可能只在一个 CPU 核心上进行调度。因此，新的调度策略改为每个 CPU 核心都引入一个本地调度器，并用它管理对应核心上执行的任务。这种调度策略使用全局调度器和本地调度器，构成了层级化结构，一般称为两级调度。</p>
+<p>当一个任务进入系统时，全局调度器根据系统的当前信息，诸如每个 CPU 核心的负载情况，决定该任务应该被哪个 CPU 核心执行，当一个任务被分配给定的核心时，它将一直被该核心的本地调度器管理，不会迁移到其他 CPU 核心上执行。同时，每个本地调度器可以使用任意单核调度策略来调度任务。在避免线程在 CPU 核心间来回切换，提高了缓存局部性，较少了数据竞争的冲突的同时，这种曾计划的设计将设计单核调度策略与支持多核调度进行了解耦，使得调度器的设计实现更加灵活。以 Linux 为代表的一系列操作系统会为每个 CPU 核心分配一个本地运行队列，即可理解为每个 CPU 核心有一个本地调度器。</p>
+<p><strong>负载追踪与负载均衡</strong></p>
+<p>两级调度策略避免了任务在多核间切换，但是由于在任务开始时就指定了它在哪个 CPU 上运行，且没有任务在 CPU 核心间切换的机制，可能会导致多核间的负载不均衡，为了解决这个问题，引入了负载均衡的策略，负载均衡的思想是**：通过追踪每个 CPU 核心当前的负载情况，将处于高负载的 CPU 核心管理的任务迁移至低负载的 CPU 核心上，尽可能的保证每个核心的负载大致相同。**</p>
+<p>负载均衡面临的挑战是：如何确定当前任务的负载情况，一个任务的执行负载是动态变化的，因此系统必须动态追踪当前的负载情况，这会造成一定的性能开销，如何保持低开销的同时对负载进行精确追踪是调度器设计实现的一大挑战，Linux 目前使用的是调度实体粒度负载追踪（PELT）。</p>
+<p>运行队列粒度的负载追踪，在 Linux 3.8 以前，内核以每个 CPU 核心的运行队列为粒度计算负载，认为运行队列长的负载就高，导致负载追踪不够精确。</p>
+<p>调度实体粒度的负载追踪，在 Linux 3.8 以后，Linux 使用了以调度实体（单个任务）为粒度的负载计算方式，做到了更细粒度的负载追踪。PELT通过记录每个任务的历史执行状况来表示任务的当前负载。具体的，调度器会以 1024 微妙作为一个周期，记录任务处于可运行状态（包括正在运行的以及等待被运行的）的时间，记为 x 微妙。该任务在第 i 个周期内对当前 CPU 的利用率为 x/1024，而对应的负载 Li 为 scale_cpu_capacity <em>x/1024 ，其中 scale_cpu_capacity 是 CPU 容量，可以理解为对应 CPU 核心的处理能力。在手机到任务每个周期内的负载后，PELT 需要计算一段时间内任务所有周期的累计负载，随着距离当前时间越远，数据参考意义越小，采用衰减系数 y 来计算：L = L0 + L0</em> y + L1 <em>y^2 + L2</em> y ^3…. 通过计算每个任务的负载 L，PELT 就可以进而统计出每个运行队列的负载，便于调度器做出有效的迁移决策。</p>
+<p>随着 CPU 核心数量越来越多，系统架构越来越复杂，负载均衡策略应该让任务尽量在迁移开销较小的 CPU核心间迁移，以 NUMA 架构为例，当任务从一个 NUMA 节点迁移到另一个 NUMA 节点，会严重影响任务的执行效率，又以超线程为例，一个物理核会被逻辑上分为两个逻辑核，任务在同属于一个五里河的两个逻辑核间切换的开销，会比在不同五里河的两个逻辑核间的开销小很多。</p>
+<p>Linux 为了解决上述问题，采用层级化的方法，引入两个数据结构：调度与是有用相同特性的 CPU 核心的集合，这些核心间可以进行负载均衡。一个调度与保存一个或多个调度组，调度组是一个调度与内进行负载均衡的整体单位。通过自下而上的方式层级式的进行负载均衡，并且为了设计简单，只允许触发负载均衡的 CPU 核心拉取其他 CPU 核心的任务到本地。如果当前 CPU 核心触发负载均衡逻辑，首先在最底层调度域内的调度组间进行均衡，然后依次进入更高一级的调度域，并对其管理的调度组进行负载均衡。由于越高层级的调度域间进行负载均衡的开销越大，所以 Linux 为不同层级的调度域设置了不同的负载均衡触发频率与阈值。</p>
+<p>对于非实时任务，Linux 使用 CFS 调度器进行调度，CFS 采用了累死公平共享调度的策略，因此其主要关心每个任务占用 CPU 时间的份额。sched_nice 为[-20,19] 的 Niceness ，越不友善的任务越倾向于使用更多的资源或抢占其他友善的任务。</p>
+<p>Linux 调度器设计</p>
+<p>O(n) 调度器</p>
+<p>在 Linux 2.4 版本以前，Linux 调度器是一个机遇 RR 策略的运行队列，没有考虑很多因素（诸如任务的实时性要求）。从 Linux 2.4 版本开始，采用 O(n) 调度器，O(n) 调度器指定调度决策的时间复杂度是 O(n) ，n 代表的是调度器运行队列中的任务数量。</p>
+<p>O(n) 调度器采用了负载分担的思想，所有任务被存储于一个全局运行队列中，被选择调度的任务会从运行队列中移除，当该任务执行完并且需要再次被调度时，会被重新放入运行队列的队尾。当调度器选择下一个被调度的任务时，需要遍历运行队列中的所有任务，并重新计算他们的动态优先级，然后选取动态优先级最高的任务。</p>
+<p>存在问题：</p>
+<ul>
+<li>调度开销过大</li>
+<li>多核扩展性差</li>
+</ul>
+<p>O(1) 调度器</p>
+<p>由于O(n) 调度器存在上述问题，Linux 在 2.6.0 版本使用心得 O(1) 调度器替换 O(n) 调度器。 O(1) 调度器采用了两级调度的思想，每个 CPU 核心单独维护一个本地运行队列，让任务仅在同一个核心上调度。每个本地运行队列实际上是由两个多级队列：激活队列和过期队列组成的，分别用于管理仍有时间片剩余的任务和时间片耗尽的任务。当一个任务的时间片耗尽后，它会被加入到过期队列中。如果当前激活队列中没没有可调度的任务， O(1) 调度器会将两个队列的角色互换，开始新一轮调度。每个多级队列都有 140 个优先级，其中高优先级 [0,100) 对应于实时任务，剩下的优先级 [100, 140) 对应于不同 Niceness 的非实时任务。每个多级队列都维护了一个位图，位图中的比特位用于判断对应的优先级队列是否有任务等待调度，在制定调度决策时， O(1) 调度器会根据位图找到激活队列中第一个不为空的队列，并调度该队列的第一个任务，其时间复杂度是 O(1) ，与运行队列中的任务数量无关。</p>
+<p>用户可能不希望交互式任务在时间片用完后就需要等待所有其他任务的时间片用完才能再次执行，因此该类任务在时间片用完后，仍然会被加入激活队列中。同时，为了防止交互式任务过于激进而导致当前过期队列中的任务无法执行，当过期队列中的任务等待过长时间后， O(1) 调度器会把交互式任务加入过期多列中。</p>
+<p>存在问题：</p>
+<ul>
+<li>交互式任务的判定算法过于复杂</li>
+<li>静态时间片带来的问题， O(1) 调度器的非实时任务的运行时间片是根据其 Niceness 静态确定的，问题是，随着系统中任务数量的上升，任务的调度时延也会上升，对应的，响应时间也会受到影响。</li>
+</ul>
+<p>完全公平调度器</p>
+<p>为了解决 O(1)调度器的问题，Linux 从 2.6.23 版本开始使用完全公平调度器。公平共享调度策略保证每个任务可以根据自己所占的份额共享 CPU 时间，这是 CFS 调度器的基本思想，O(1)调度器需要繁琐的通过启发式方法确定交互式任务，再给与交互式任务更多的执行机会。而 CFS 调度器只关心非实时任务对 CPU 时间的公平共享，避免了复杂的调度算法实现与调参。同时通过动态的设定任务时间片，确保了任务的调度时延不会过高。</p>
+<p>CFS 调度器所使用的调度策略类似于步幅调度，vruntime 代表人物经过的虚拟时间，在调度是 CFS 会调度 vruntime 值最低的任务，Linux 静态的设置了 Niceness 与任务权重的对应关系，Niceness 越低则任务的权重越高，可被分配的 CPU 时间越多。</p>
+<p>CFS 调度器的动态时间片，为了避免静态设置任务时间片所带来的问题，CFS 调度使用了调度周期的概念，并保证每经过一个调度周期，运行队列中所有任务都会被调度一次。因而在最坏的情况下，任务的调度时延即为一个调度周期。同时间片一样，调度周期会带来权衡问题。如果调度周期过长，则一系列任务必须在很长时间的运行后才能体现公平性，且任务的调度时延可能过长；如果调度周期过短，则调度开销会变大。</p>
+<p>确定了 CFS 的调度周期后，调度器就可以开始计算在当前运行队列中，第 i 个任务的动态时间片 time_slice_i = sched_period * weight_i / weight_rq ，其中 weight_i 是第 i 个任务的权重，weight_rq 代表当前运行队列中的任务权重之和。</p>
+<p>由于每个任务的动态时间片是不同的，都根据任务权重进行了缩放，所以任务每次执行后对 vruntime 的更新也要进行对应的缩放：vruntime_i = vruntime_i + weight_nice0 / weight_i * real_runtime ，其中 weight_nice0 表示一个 Niceness 为 0 的任务的权重，该权重与 weight_i 的比值是一个系数，用于将任务的实际运行时间映射为虚拟时间。通过该系数，CFS 保证了不同动态时间片的任务执行完自己的时间片后，他们虚拟时间的增幅是一致的。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="SherlockOuO">SherlockOuO</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://sherlockouo.github.io/2022/01/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%B0%83%E5%BA%A6%20145b08dfb068466a8b142222016c6785/">https://sherlockouo.github.io/2022/01/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%B0%83%E5%BA%A6%20145b08dfb068466a8b142222016c6785/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a><a class="post-meta__tags" href="/tags/OS/">OS</a><a class="post-meta__tags" href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></div><div class="post_share"><div class="social-share" data-image="/img/old/%E5%86%B0%E7%A2%9B%E6%B9%96%E9%9B%AA%E5%B1%B1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>Sponsor</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/img/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/01/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%90%8C%E6%AD%A5%E5%8E%9F%E8%AF%AD%207025ee313c1541f7bcc27e56dd6bae37/" title="操作系统的同步原语"><img class="cover" src="/img/old/%E5%86%AC%E5%AD%A3%E9%9B%AA%E5%B1%B1%E6%A0%91%E6%B2%B3%E6%B0%B4%E5%80%92%E5%BD%B1%E9%93%B6%E8%A3%85%E7%B4%A0%E8%A3%B9.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">操作系统的同步原语</div></div></a></div><div class="next-post pull-right"><a href="/2022/01/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%203a25fc8e3e6a4d36870f009754fe9f92/" title="操作系统进程间通信"><img class="cover" src="/img/old/%E7%BB%BF%E6%B5%B7%E6%B5%B7%E6%B5%AA%E5%94%AF%E7%BE%8E%E8%89%BA%E6%9C%AF%E6%8A%BD%E8%B1%A1%E9%A3%8E%E6%99%AF%E7%94%BB.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next</div><div class="next_info">操作系统进程间通信</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2022/01/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%20cdf98d5e953848f49053d3c39f6217be/" title="操作系统的内存管理"><img class="cover" src="/img/old/%E5%86%AC%E5%A4%A9%E9%9B%AA%E6%A0%91%E5%A4%AA%E9%98%B3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-24</div><div class="title">操作系统的内存管理</div></div></a></div><div><a href="/2022/01/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E5%90%8C%E6%AD%A5%E5%8E%9F%E8%AF%AD%207025ee313c1541f7bcc27e56dd6bae37/" title="操作系统的同步原语"><img class="cover" src="/img/old/%E5%86%AC%E5%AD%A3%E9%9B%AA%E5%B1%B1%E6%A0%91%E6%B2%B3%E6%B0%B4%E5%80%92%E5%BD%B1%E9%93%B6%E8%A3%85%E7%B4%A0%E8%A3%B9.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-24</div><div class="title">操作系统的同步原语</div></div></a></div><div><a href="/2022/01/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0%20c5e5c9d7de8b49f8a3ac38165db4f1ba/" title="操作系统概述"><img class="cover" src="/img/old/%E9%9D%A2%E5%85%B7%E5%A5%B3%E5%AD%A9%E5%93%88%E8%8E%89%E5%A5%8E%E8%8C%B5%E5%B0%8F%E4%B8%91%E5%A5%B3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-24</div><div class="title">操作系统概述</div></div></a></div><div><a href="/2022/01/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%93%E6%9E%84%205d19f61b8baa444e80ddc42f76f2b795/" title="操作系统的结构"><img class="cover" src="/img/old/%E8%93%9D%E8%89%B2%E6%98%9F%E7%90%83%E6%98%9F%E7%A9%BA.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-24</div><div class="title">操作系统的结构</div></div></a></div><div><a href="/2022/01/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B%201d853d3b40cb4515a5c6814abd8f4bff/" title="操作系统的进程与线程"><img class="cover" src="/img/old/%E7%BB%98%E7%94%BB%E6%B5%B7%E6%99%AF%E5%B8%86%E8%88%B9.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-24</div><div class="title">操作系统的进程与线程</div></div></a></div><div><a href="/2022/01/24/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1%203a25fc8e3e6a4d36870f009754fe9f92/" title="操作系统进程间通信"><img class="cover" src="/img/old/%E7%BB%BF%E6%B5%B7%E6%B5%B7%E6%B5%AA%E5%94%AF%E7%BE%8E%E8%89%BA%E6%9C%AF%E6%8A%BD%E8%B1%A1%E9%A3%8E%E6%99%AF%E7%94%BB.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-24</div><div class="title">操作系统进程间通信</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div><div class="comment-switch"><span class="first-comment">Valine</span><span id="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">SherlockOuO</div><div class="author-info__description">记录精彩的程序人生</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">65</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">106</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">9</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/sherlockouo"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/sherlockouo" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:wdf.coder@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">I'll come back</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">操作系统调度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">单核调度策略</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6"><span class="toc-number">2.1.</span> <span class="toc-text">优先级调度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%A0%B8%E8%B0%83%E5%BA%A6%E7%AD%96%E7%95%A5"><span class="toc-number">2.1.1.</span> <span class="toc-text">多核调度策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%A0%B8%E8%B0%83%E5%BA%A6%E7%AD%96%E7%95%A5-2"><span class="toc-number">2.1.2.</span> <span class="toc-text">多核调度策略</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/01/09/CICD/%E8%A7%A3%E5%86%B3jenkins%E6%97%A0%E6%B3%95%E5%85%8B%E9%9A%86%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E9%97%AE%E9%A2%98/" title="解决 jenkins 无法克隆私有仓库问题"><img src="/img/funny-stuff/jenkins.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="解决 jenkins 无法克隆私有仓库问题"/></a><div class="content"><a class="title" href="/2024/01/09/CICD/%E8%A7%A3%E5%86%B3jenkins%E6%97%A0%E6%B3%95%E5%85%8B%E9%9A%86%E7%A7%81%E6%9C%89%E4%BB%93%E5%BA%93%E9%97%AE%E9%A2%98/" title="解决 jenkins 无法克隆私有仓库问题">解决 jenkins 无法克隆私有仓库问题</a><time datetime="2024-01-08T21:39:00.000Z" title="Created 2024-01-08 21:39:00">2024-01-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%88%9B%E5%BB%BA%E5%9E%8B/" title="设计模式——创建型"><img src="/img/old/%E5%A4%A7%E6%B5%B7%E6%B5%B7%E6%BB%A9%E6%A0%91%E7%9F%B3%E5%A4%B4%E6%A0%91.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="设计模式——创建型"/></a><div class="content"><a class="title" href="/2022/03/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E5%88%9B%E5%BB%BA%E5%9E%8B/" title="设计模式——创建型">设计模式——创建型</a><time datetime="2022-03-05T15:01:35.000Z" title="Created 2022-03-05 15:01:35">2022-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A1%8C%E4%B8%BA%E5%9E%8B/" title="设计模式——行为型"><img src="/img/old/%E6%A1%82%E6%9E%97%E5%B1%B1%E6%B0%B4%E9%A3%8E%E6%99%AF.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="设计模式——行为型"/></a><div class="content"><a class="title" href="/2022/03/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E8%A1%8C%E4%B8%BA%E5%9E%8B/" title="设计模式——行为型">设计模式——行为型</a><time datetime="2022-03-05T15:01:28.000Z" title="Created 2022-03-05 15:01:28">2022-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E7%BB%93%E6%9E%84%E5%9E%8B/" title="设计模式——结构型"><img src="/img/old/%E6%A1%82%E6%9E%97%E5%B1%B1%E6%B0%B4%E9%A3%8E%E6%99%AF.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="设计模式——结构型"/></a><div class="content"><a class="title" href="/2022/03/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E2%80%94%E2%80%94%E7%BB%93%E6%9E%84%E5%9E%8B/" title="设计模式——结构型">设计模式——结构型</a><time datetime="2022-03-05T15:01:20.000Z" title="Created 2022-03-05 15:01:20">2022-03-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/03/02/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/%E7%BB%99%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%9D%A5%E8%AE%BF%E8%80%85%E7%9A%84IP/" title="给博客添加来访者的IP"><img src="/img/old/20220302105051.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="给博客添加来访者的IP"/></a><div class="content"><a class="title" href="/2022/03/02/%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96/%E7%BB%99%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E6%9D%A5%E8%AE%BF%E8%80%85%E7%9A%84IP/" title="给博客添加来访者的IP">给博客添加来访者的IP</a><time datetime="2022-03-02T10:47:50.000Z" title="Created 2022-03-02 10:47:50">2022-03-02</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By SherlockOuO</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional Chinese And Simplified Chinese">简</button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  btf.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'nMdjg5yUMzKThyAPvnXWvjAc-gzGzoHsz',
+      appKey: 'cwrH0O7gqIvSeFO7QLCbxqKa',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: {"tv_doge":"https://i0.hdslb.com/bfs/emote/6ea59c827c414b4a2955fe79e0f6fd3dcd515e24.png","tv_亲亲":"https://i0.hdslb.com/bfs/emote/a8111ad55953ef5e3be3327ef94eb4a39d535d06.png","tv_偷笑":"https://i0.hdslb.com/bfs/emote/bb690d4107620f1c15cff29509db529a73aee261.png","tv_再见":"https://i0.hdslb.com/bfs/emote/180129b8ea851044ce71caf55cc8ce44bd4a4fc8.png","tv_冷漠":"https://i0.hdslb.com/bfs/emote/b9cbc755c2b3ee43be07ca13de84e5b699a3f101.png","tv_发怒":"https://i0.hdslb.com/bfs/emote/34ba3cd204d5b05fec70ce08fa9fa0dd612409ff.png","tv_发财":"https://i0.hdslb.com/bfs/emote/34db290afd2963723c6eb3c4560667db7253a21a.png","tv_可爱":"https://i0.hdslb.com/bfs/emote/9e55fd9b500ac4b96613539f1ce2f9499e314ed9.png","tv_吐血":"https://i0.hdslb.com/bfs/emote/09dd16a7aa59b77baa1155d47484409624470c77.png","tv_呆":"https://i0.hdslb.com/bfs/emote/fe1179ebaa191569b0d31cecafe7a2cd1c951c9d.png","tv_呕吐":"https://i0.hdslb.com/bfs/emote/9f996894a39e282ccf5e66856af49483f81870f3.png","tv_困":"https://i0.hdslb.com/bfs/emote/241ee304e44c0af029adceb294399391e4737ef2.png","tv_坏笑":"https://i0.hdslb.com/bfs/emote/1f0b87f731a671079842116e0991c91c2c88645a.png","tv_大佬":"https://i0.hdslb.com/bfs/emote/093c1e2c490161aca397afc45573c877cdead616.png","tv_大哭":"https://i0.hdslb.com/bfs/emote/23269aeb35f99daee28dda129676f6e9ea87934f.png","tv_委屈":"https://i0.hdslb.com/bfs/emote/d04dba7b5465779e9755d2ab6f0a897b9b33bb77.png","tv_害羞":"https://i0.hdslb.com/bfs/emote/a37683fb5642fa3ddfc7f4e5525fd13e42a2bdb1.png","tv_尴尬":"https://i0.hdslb.com/bfs/emote/7cfa62dafc59798a3d3fb262d421eeeff166cfa4.png","tv_微笑":"https://i0.hdslb.com/bfs/emote/70dc5c7b56f93eb61bddba11e28fb1d18fddcd4c.png","tv_思考":"https://i0.hdslb.com/bfs/emote/90cf159733e558137ed20aa04d09964436f618a1.png","tv_惊吓":"https://i0.hdslb.com/bfs/emote/0d15c7e2ee58e935adc6a7193ee042388adc22af.png"},
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !true) {
+    if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: '269a45be1f3eba65eab0',
+      clientSecret: '599196612c7053f1bd5f17a5ee419f5368aae88c',
+      repo: 'sherlockouo.github.io',
+      owner: 'sherlockouo',
+      admin: ['sherlockouo'],
+      id: 'a3e8f8a0dded39fa77cca860f16d86fc',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Valine' === 'Gitalk' || !true) {
+    if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.22.0/dist/algoliasearch-lite.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.63.0/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js?v=4.12.0"></script></div></div><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/font_2264842_3izu8i5eoc2.js"></script><!-- hexo injector body_end end --></body></html>
