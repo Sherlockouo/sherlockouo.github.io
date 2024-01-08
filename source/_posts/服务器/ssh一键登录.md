@@ -15,7 +15,7 @@ tags: [linux,服务器]
 categories: 编程
 keywords: linux服务器一健登录
 description: ssh一键登录
-cover: https://gitee.com/coder-wdf/picgo/raw/master/img/20220302105051.png
+cover: /img/old/20220302105051.png
 top_img: 
 ---
 

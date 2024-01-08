@@ -15,7 +15,7 @@ tags: [Java,网络,源码]
 categories: 编程
 keywords: java 实现 http keep-alive
 description: jdk 实现 http keep-alive
-cover: https://gitee.com/coder-wdf/picgo/raw/master/img/Young%20Star%20Jet%20MHO%202147.jpg
+cover: /img/old/Young%20Star%20Jet%20MHO%202147.jpg
 top_img: 
 ---
 
@@ -42,7 +42,7 @@ top_img:
 ## 可以先写个demo 试试
 
 > 感谢 http://zxin.site/ 头像提供的测试支持
-> ![](https://gitee.com/coder-wdf/picgo/raw/master/img/20220122165945.png)
+> ![](/img/old/20220122165945.png)
 
 ```java
 package net;
@@ -91,10 +91,10 @@ public class KeepAlive {
 ```
 
 从jdk 源码可以看出，httpclient实现时 默认开启了keep-alive
-![httpclient](https://gitee.com/coder-wdf/picgo/raw/master/img/20220122143720.png)
+![httpclient](/img/old/20220122143720.png)
 
 从 wireshark 抓包数据可以看出 一共三个TCP请求 前两个未使用 keepalive，后三个开启后只使用了一次TCP连接
-![keep-alive](https://gitee.com/coder-wdf/picgo/raw/master/img/20220122143832.png)
+![keep-alive](/img/old/20220122143832.png)
 
 验证完成后 我们来看看 jdk是如何实现 keep-alive的
 
@@ -356,7 +356,7 @@ class KeepAliveEntry {
 ```
 
 keepalive 缓存结构
-![cache结构](https://gitee.com/coder-wdf/picgo/raw/master/img/v2-1aca135285796b9e894181d6475cebf4_720w.jpg)
+![cache结构](/img/old/v2-1aca135285796b9e894181d6475cebf4_720w.jpg)
 
 ## "断开"连接
 

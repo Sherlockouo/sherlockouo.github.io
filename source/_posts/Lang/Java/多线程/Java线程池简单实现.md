@@ -15,7 +15,7 @@ tags: [Java,编程,多线程]
 categories: 编程
 keywords:
 description:
-cover: https://gitee.com/coder-wdf/picgo/raw/master/img/threadpool.png
+cover: /img/old/threadpool.png
 top_img:
 
 ---
@@ -24,7 +24,7 @@ top_img:
 
 先看一下线程池的类图：
 
-![threadpoolexecutor](https://gitee.com/coder-wdf/picgo/raw/master/img/threadpool%E7%B1%BB%E5%9B%BE.png)
+![threadpoolexecutor](/img/old/threadpool%E7%B1%BB%E5%9B%BE.png)
 
 ## Executer 框架接口
 
@@ -32,7 +32,7 @@ Executor 框架是根据一组执行策略调用，调度，执行 和 控制的
 
 我们看一下Executor的类图：
 
-![class](https://gitee.com/coder-wdf/picgo/raw/master/img/executor%E6%A1%86%E6%9E%B6.png) 
+![class](/img/old/executor%E6%A1%86%E6%9E%B6.png) 
 
 从图中可以看出，ThreadPoolExecutor是线程池的核心
 
@@ -53,7 +53,7 @@ JUC中有三个Executor接口
 
 先看一下他的流程图：
 
-![flow](https://gitee.com/coder-wdf/picgo/raw/master/img/916005-20200318232011542-502556595.png)
+![flow](/img/old/916005-20200318232011542-502556595.png)
 
 核心逻辑概括起来就是：
 

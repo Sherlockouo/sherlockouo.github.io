@@ -15,7 +15,7 @@ tags: [CMU,数据库,BufferPool]
 categories: 编程
 keywords: 手写数据库
 description:
-cover: https://gitee.com/coder-wdf/picgo/raw/master/img/%E9%9B%86%E5%8E%9F%E7%BE%8E%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B%E9%A3%8E%E6%A0%BC%E5%A5%87%E5%B9%BB%E5%B0%91%E5%A5%B3.jpg
+cover: /img/old/%E9%9B%86%E5%8E%9F%E7%BE%8E%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B%E9%A3%8E%E6%A0%BC%E5%A5%87%E5%B9%BB%E5%B0%91%E5%A5%B3.jpg
 top_img:
 ---
 
@@ -55,7 +55,7 @@ top_img:
     与LRU比较相似,执行的是Clock替换策略,Victim最后一个,Unpin添加到开头.
 
 ## 需要实现的函数
-![func](https://gitee.com/coder-wdf/picgo/raw/master/img/bp_func.png)
+![func](/img/old/bp_func.png)
 
 **先介绍一下一些属性**:
 1. page_table_： 表示 page页 和  frame 页的映射
@@ -167,8 +167,8 @@ top_img:
   
 
 {% gallery %}
-![](https://gitee.com/coder-wdf/picgo/raw/master/img/%E7%A9%BF%E7%99%BD%E8%89%B2%E8%A1%AC%E8%A1%AB%E7%9A%84%E5%8F%AF%E7%88%B1%E5%A5%B3%E5%AD%A9%E5%BA%8A%E4%B8%8A%E7%9C%8B%E4%B9%A6%E7%BE%8E%E8%85%BF%E4%BA%8C%E6%AC%A1%E5%85%83.jpg)
-![](https://gitee.com/coder-wdf/picgo/raw/master/img/%E5%8F%AF%E7%88%B1%E5%A5%B3%E5%AD%A9%E5%AD%90%E8%93%9D%E8%89%B2%E7%9C%BC%E7%9D%9B%E7%8C%AB%E8%80%B3%E5%85%BD%E8%80%B3%E7%8C%AB%E5%B0%BE%E5%B7%B4%E6%AF%9B%E7%BB%92%E7%8E%A9%E5%85%B7.jpg)
+![](/img/old/%E7%A9%BF%E7%99%BD%E8%89%B2%E8%A1%AC%E8%A1%AB%E7%9A%84%E5%8F%AF%E7%88%B1%E5%A5%B3%E5%AD%A9%E5%BA%8A%E4%B8%8A%E7%9C%8B%E4%B9%A6%E7%BE%8E%E8%85%BF%E4%BA%8C%E6%AC%A1%E5%85%83.jpg)
+![](/img/old/%E5%8F%AF%E7%88%B1%E5%A5%B3%E5%AD%A9%E5%AD%90%E8%93%9D%E8%89%B2%E7%9C%BC%E7%9D%9B%E7%8C%AB%E8%80%B3%E5%85%BD%E8%80%B3%E7%8C%AB%E5%B0%BE%E5%B7%B4%E6%AF%9B%E7%BB%92%E7%8E%A9%E5%85%B7.jpg)
 {% endgallery %}
 
 

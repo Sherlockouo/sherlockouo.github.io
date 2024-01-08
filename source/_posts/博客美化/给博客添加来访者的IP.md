@@ -15,13 +15,13 @@ tags: [博客美化,butterfly]
 categories: 编程
 keywords: 博客美化
 description: 给博客添加来访者IP
-cover: https://gitee.com/coder-wdf/picgo/raw/master/img/20220302105051.png
+cover: /img/old/20220302105051.png
 top_img: 
 ---
 
 先看效果
 
-![效果](https://gitee.com/coder-wdf/picgo/raw/master/img/20220302105051.png)
+![效果](/img/old/20220302105051.png)
 
 现在有很多获得IP的API
 

@@ -15,7 +15,7 @@ tags: [SQL,数据库]
 categories: 编程
 keywords:
 description:
-cover: https://gitee.com/coder-wdf/picgo/raw/master/img/%E6%B1%9F%E5%8D%97%E7%83%A7%E9%85%924k%E5%8A%A8%E6%BC%AB.jpg
+cover: /img/old/%E6%B1%9F%E5%8D%97%E7%83%A7%E9%85%924k%E5%8A%A8%E6%BC%AB.jpg
 top_img:
 ---
 
