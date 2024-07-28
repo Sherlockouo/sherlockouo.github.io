@@ -1,13 +1,13 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-title = 'Notes'
+title = 'Sherlock Ouo"s Blog'
 theme = 'paper'
 
 disqusShortname = 'YOUR_DISQUS_SHORTNAME' # use disqus comments
 
 [params]
 # color style
-color = 'linen' # linen, wheat, gray, light
+color = 'light' # linen, wheat, gray, light
 
 # header social icons
 # twitter = 'YOUR_TWITTER_ID'     # twitter.com/YOUR_TWITTER_ID
@@ -36,11 +36,11 @@ favicon = "favicon.ico"                  # customize the default favicon
 appleTouchIcon = "apple-touch-icon.png"  # customize the default Apple touch icon
 
 # giscus
-# [params.giscus]
-# repo = 'YOUR_GISCUS_REPO'              # see https://giscus.app for more details
-# repoId = 'YOUR_GISCUS_REPO_ID'
-# category = 'YOUR__GISCUS_CATEGORY'
-# categoryId = 'YOUR_GISCUS_CATEGORY_ID'
-# mapping = 'pathname'
-# theme = 'light'
-# lang = 'zh-CN'
+[params.giscus]
+repo = 'sherlockouo/giscus' # see https://giscus.app for more details
+repoId = 'R_kgDOMZ9AYw'
+category = 'General'
+categoryId = 'R_kgDOMZ9AYw'
+mapping = 'pathname'
+theme = 'light'
+lang = 'zh-CN'
