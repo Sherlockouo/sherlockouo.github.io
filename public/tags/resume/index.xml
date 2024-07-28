@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Sherlock Ouo Blog</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on Sherlock Ouo Blog</description>
+    <title>Resume on Sherlock Ouo Blog</title>
+    <link>http://localhost:1313/tags/resume/</link>
+    <description>Recent content in Resume on Sherlock Ouo Blog</description>
     <image>
       <title>Sherlock Ouo Blog</title>
       <url>https://cdn.hasselblad.com/f/77891/2000x2000/e0ebd5ae15/31405-2.jpg</url>
@@ -12,9 +12,9 @@
     <generator>Hugo -- 0.129.0</generator>
     <language>en</language>
     <lastBuildDate>Tue, 23 Jul 2024 15:18:18 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/resume/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My First Post</title>
+      <title>结构化 prompt 示例</title>
       <link>http://localhost:1313/posts/my-first-post/</link>
       <pubDate>Tue, 23 Jul 2024 15:18:18 +0800</pubDate>
       <guid>http://localhost:1313/posts/my-first-post/</guid>

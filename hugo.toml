@@ -1,46 +1,122 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'Sherlock Ouo"s Blog'
-theme = 'paper'
+baseURL = "https://sherlockouo.github.io"
+title = "Sherlock Ouo Blog"
+paginate = 5
+theme = "PaperMod"
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+pygmentsUseClasses = true
 
-disqusShortname = 'YOUR_DISQUS_SHORTNAME' # use disqus comments
+[minify]
+disableXML = true
+minifyOutput = true
 
 [params]
-# color style
-color = 'light' # linen, wheat, gray, light
+env = "production"
+title = "Sherlock Ouo  Blog"
+description = "some description, but omitted here, I'm just lazy"
+keywords = ["Blog", "Portfolio", "PaperMod"]
+author = "SherlockOuO"
+images = ["https://cdn.hasselblad.com/f/77891/2000x2000/e0ebd5ae15/31405-2.jpg"]
+DateFormat = "January 2, 2006"
+defaultTheme = "auto"
+disableThemeToggle = false
+ShowReadingTime = true
+ShowShareButtons = false
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = false
+ShowWordCount = true
+ShowRssButtonInSectionTermList = true
+UseHugoToc = true
+disableSpecial1stPost = false
+disableScrollToTop = false
+comments = true
+hidemeta = false
+hideSummary = false
+showtoc = false
+tocopen = false
 
-# header social icons
-# twitter = 'YOUR_TWITTER_ID'     # twitter.com/YOUR_TWITTER_ID
-github = 'sherlockouo' # github.com/YOUR_GITHUB_ID
-# instagram = 'YOUR_INSTAGRAM_ID' # instagram.com/YOUR_INSTAGRAM_ID
-# linkedin = 'YOUR_LINKEDIN_ID'   # linkedin.com/in/YOUR_LINKEDIN_ID
-# mastodon = 'YOUR_MASTODON_LINK' # e.g. 'https://mastodon.instance/@xxx'
-# threads = '@YOUR_THREADS_ID'    # threads.net/@YOUR_THREADS_ID
-rss = true # show rss icon
+[params.assets]
+favicon = "<link / abs url>"
+favicon16x16 = "<link / abs url>"
+favicon32x32 = "<link / abs url>"
+apple_touch_icon = "<link / abs url>"
+safari_pinned_tab = "<link / abs url>"
 
-# home page profile
-avatar = 'GRAVATAR_EMAIL'    # gravatar email or image url
-name = 'sherlockouo'
-bio = 'A software engineer.'
+[params.label]
+text = "Sherlock Ouo Blog"
+icon = "/apple-touch-icon.png"
+iconHeight = 35
+
+[params.profileMode]
+enabled = false
+title = "Sherlock Ouo  Blog"
+subtitle = "Welcome to my blog"
+imageUrl = "<img location>"
+imageWidth = 120
+imageHeight = 120
+imageTitle = "my image"
+
+[[params.profileMode.buttons]]
+name = "Posts"
+url = "posts"
+
+[[params.profileMode.buttons]]
+name = "Tags"
+url = "tags"
+
+[params.homeInfoParams]
+Title = "Hi there 👋"
+Content = "Got you!"
+
+[[params.socialIcons]]
+name = "x"
+url = "https://x.com/sherlockovo"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/sherlockouo"
+
+[params.analytics.google]
+SiteVerificationTag = "XYZabc"
+
+[params.analytics.bing]
+SiteVerificationTag = "XYZabc"
+
+[params.cover]
+hidden = true
+hiddenInList = true
+hiddenInSingle = true
+
+[params.editPost]
+URL = "https://github.com/sherlockouo/hugo/content/post/"
+Text = "Edit"
+appendFilePath = true
+
+[params.fuseOpts]
+isCaseSensitive = false
+shouldSort = true
+location = 0
+distance = 1_000
+threshold = 0.4
+minMatchCharLength = 0
+limit = 10
+keys = ["title", "permalink", "summary", "content"]
+
+[[menu.main]]
+identifier = "categories"
+name = "Categories"
+url = "/categories/"
+weight = 10
+
+[[menu.main]]
+identifier = "tags"
+name = "Tags"
+url = "/tags/"
+weight = 50
 
 
-# misc
-disableHLJS = true                       # disable highlight.js
-disablePostNavigation = true             # disable post navigation
-monoDarkIcon = true                      # show monochrome dark mode icon
-gravatarCdn = 'GRAVATAR_CDN_LINK'        # e.g. 'https://cdn.v2ex.com/gravatar/'
-math = true                              # enable KaTeX math typesetting globally
-localKatex = false                       # use local KaTeX js/css instead of CDN
-graphCommentId = "YOUR_GRAPH_COMMENT_ID" # use graph comment (disqus alternative)
-favicon = "favicon.ico"                  # customize the default favicon
-appleTouchIcon = "apple-touch-icon.png"  # customize the default Apple touch icon
-
-# giscus
-[params.giscus]
-repo = 'sherlockouo/giscus' # see https://giscus.app for more details
-repoId = 'R_kgDOMZ9AYw'
-category = 'General'
-categoryId = 'R_kgDOMZ9AYw'
-mapping = 'pathname'
-theme = 'light'
-lang = 'zh-CN'
+[markup.highlight]
+noClasses = false

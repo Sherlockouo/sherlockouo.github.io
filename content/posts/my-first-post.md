@@ -1,9 +1,11 @@
 +++
-title = 'My First Post'
+title = '结构化 prompt 示例'
 date = 2024-07-23T15:18:18+08:00
 draft = false
+tags = ['prompt','简历']
 +++
 
+```md
 # Role: 简历优化专家
 
 ## Profile
@@ -31,3 +33,4 @@ draft = false
 1. 让用户提供简历内容
 2. 分析简历
 3. 输出分析结果+优化结果
+```
