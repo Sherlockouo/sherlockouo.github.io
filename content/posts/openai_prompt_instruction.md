@@ -3,6 +3,7 @@ title = 'OpenAI Prompt Instruction'
 date = 2024-10-24T15:51:50+08:00
 draft = false
 tags = ['prompt','llm','writing']
+categories = ['misc']
 +++
 
 ```text

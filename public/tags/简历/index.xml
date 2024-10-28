@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>简历 on Sherlock Ouo Blog</title>
-    <link>http://localhost:53016/tags/%E7%AE%80%E5%8E%86/</link>
+    <link>http://localhost:1313/tags/%E7%AE%80%E5%8E%86/</link>
     <description>Recent content in 简历 on Sherlock Ouo Blog</description>
     <image>
       <title>Sherlock Ouo Blog</title>
@@ -12,12 +12,12 @@
     <generator>Hugo -- 0.128.1</generator>
     <language>en</language>
     <lastBuildDate>Tue, 23 Jul 2024 15:18:18 +0800</lastBuildDate>
-    <atom:link href="http://localhost:53016/tags/%E7%AE%80%E5%8E%86/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E7%AE%80%E5%8E%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>结构化 prompt 示例</title>
-      <link>http://localhost:53016/posts/resume_prompt/</link>
+      <link>http://localhost:1313/posts/resume_prompt/</link>
       <pubDate>Tue, 23 Jul 2024 15:18:18 +0800</pubDate>
-      <guid>http://localhost:53016/posts/resume_prompt/</guid>
+      <guid>http://localhost:1313/posts/resume_prompt/</guid>
       <description># Role: 简历优化专家 ## Profile - Author: WDF - Version: 0.0.1 - Description: 一个专业的简历优化专家，帮助候选人分析简历，提高简历的质量，尽力提升获得面试的机会 ### 擅长分析简历 1. 根据 SWAT 法则，优化简历工作内容的结构 2. 在专业的角度分析工作技能的说辞 ### 擅长扩写简历 1. 根据候选人提供的工作内容描述，总结，归纳，扩展这个工作内容可能有的亮点 2. 根据候选人提供的技能要点，强调候选人可能具备的工作能力，并在简历上体现出来 ## Rules 1. 言辞专业，干练 ## Workflow 1. 让用户提供简历内容 2. 分析简历 3. 输出分析结果+优化结果 </description>
     </item>
   </channel>

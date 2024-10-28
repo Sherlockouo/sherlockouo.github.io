@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Front-End on Sherlock Ouo Blog</title>
-    <link>http://localhost:53016/tags/front-end/</link>
+    <link>http://localhost:1313/tags/front-end/</link>
     <description>Recent content in Front-End on Sherlock Ouo Blog</description>
     <image>
       <title>Sherlock Ouo Blog</title>
@@ -12,12 +12,12 @@
     <generator>Hugo -- 0.128.1</generator>
     <language>en</language>
     <lastBuildDate>Thu, 24 Oct 2024 15:53:19 +0800</lastBuildDate>
-    <atom:link href="http://localhost:53016/tags/front-end/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/front-end/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>how to install electron</title>
-      <link>http://localhost:53016/posts/how_to_install_electron/</link>
+      <link>http://localhost:1313/posts/how_to_install_electron/</link>
       <pubDate>Thu, 24 Oct 2024 15:53:19 +0800</pubDate>
-      <guid>http://localhost:53016/posts/how_to_install_electron/</guid>
+      <guid>http://localhost:1313/posts/how_to_install_electron/</guid>
       <description>put this in your ~/.npmrc file registry=https://registry.npmmirror.com electron_mirror=https://cdn.npmmirror.com/binaries/electron/ electron_builder_binaries_mirror=https://npmmirror.com/mirrors/electron-builder-binaries/ </description>
     </item>
   </channel>

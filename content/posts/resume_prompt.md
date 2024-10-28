@@ -3,6 +3,7 @@ title = '结构化 prompt 示例'
 date = 2024-07-23T15:18:18+08:00
 draft = false
 tags = ['prompt','简历']
+categories = ['misc']
 +++
 
 ```md

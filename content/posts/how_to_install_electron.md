@@ -3,6 +3,7 @@ title = 'how to install electron'
 date = 2024-10-24T15:53:19+08:00
 draft = false
 tags = ['electron','front-end']
+categories = ['development']
 +++
 
 ## put this in your `~/.npmrc` file
