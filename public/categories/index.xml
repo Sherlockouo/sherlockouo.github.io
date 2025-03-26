@@ -11,6 +11,42 @@
     </image>
     <generator>Hugo -- 0.128.1</generator>
     <language>en</language>
+    <lastBuildDate>Wed, 20 Nov 2024 19:22:08 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim</title>
+      <link>http://localhost:1313/categories/vim/</link>
+      <pubDate>Wed, 20 Nov 2024 19:22:08 +0800</pubDate>
+      <guid>http://localhost:1313/categories/vim/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>http://localhost:1313/categories/programming/</link>
+      <pubDate>Wed, 13 Nov 2024 11:27:29 +0800</pubDate>
+      <guid>http://localhost:1313/categories/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Money</title>
+      <link>http://localhost:1313/categories/money/</link>
+      <pubDate>Fri, 25 Oct 2024 13:11:26 +0800</pubDate>
+      <guid>http://localhost:1313/categories/money/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Development</title>
+      <link>http://localhost:1313/categories/development/</link>
+      <pubDate>Thu, 24 Oct 2024 15:53:19 +0800</pubDate>
+      <guid>http://localhost:1313/categories/development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Misc</title>
+      <link>http://localhost:1313/categories/misc/</link>
+      <pubDate>Thu, 24 Oct 2024 15:51:50 +0800</pubDate>
+      <guid>http://localhost:1313/categories/misc/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

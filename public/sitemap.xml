@@ -2,6 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2024-12-05T19:32:11+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/prompts/</loc>
+    <lastmod>2024-12-05T19:32:11+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-12-05T19:32:11+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2024-11-20T19:22:08+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/lazyvim_snacks/</loc>
+    <lastmod>2024-11-20T19:22:08+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/lazyvim/</loc>
+    <lastmod>2024-11-20T19:22:08+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/snacks.nvim/</loc>
+    <lastmod>2024-11-20T19:22:08+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-11-20T19:22:08+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/vim/</loc>
+    <lastmod>2024-11-20T19:22:08+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/vim/</loc>
+    <lastmod>2024-11-20T19:22:08+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/tricks/</loc>
+    <lastmod>2024-11-15T16:57:31+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/vim_related/</loc>
+    <lastmod>2024-11-15T16:57:31+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/distribute-system/</loc>
+    <lastmod>2024-11-13T11:27:29+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/mapreduce/</loc>
+    <lastmod>2024-11-13T11:27:29+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/programming/</loc>
+    <lastmod>2024-11-13T11:27:29+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/what_is_map_reduce/</loc>
+    <lastmod>2024-11-13T11:27:29+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/indie_hacker_thing/</loc>
+    <lastmod>2024-10-25T13:11:26+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/indiehacker/</loc>
+    <lastmod>2024-10-25T13:11:26+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/money/</loc>
+    <lastmod>2024-10-25T13:11:26+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/development/</loc>
+    <lastmod>2024-10-24T15:53:19+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/electron/</loc>
     <lastmod>2024-10-24T15:53:19+08:00</lastmod>
   </url><url>
@@ -11,16 +71,10 @@
     <loc>http://localhost:1313/posts/how_to_install_electron/</loc>
     <lastmod>2024-10-24T15:53:19+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2024-10-24T15:53:19+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2024-10-24T15:53:19+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-10-24T15:53:19+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/llm/</loc>
+    <lastmod>2024-10-24T15:51:50+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/misc/</loc>
     <lastmod>2024-10-24T15:51:50+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/openai_prompt_instruction/</loc>
@@ -37,7 +91,5 @@
   </url><url>
     <loc>http://localhost:1313/posts/resume_prompt/</loc>
     <lastmod>2024-07-23T15:18:18+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
   </url>
 </urlset>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Programming on Sherlock Ouo Blog</title>
+    <link>http://localhost:1313/categories/programming/</link>
+    <description>Recent content in Programming on Sherlock Ouo Blog</description>
+    <image>
+      <title>Sherlock Ouo Blog</title>
+      <url>https://cdn.hasselblad.com/f/77891/2000x2000/e0ebd5ae15/31405-2.jpg</url>
+      <link>https://cdn.hasselblad.com/f/77891/2000x2000/e0ebd5ae15/31405-2.jpg</link>
+    </image>
+    <generator>Hugo -- 0.128.1</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 13 Nov 2024 11:27:29 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is map reduce?</title>
+      <link>http://localhost:1313/posts/what_is_map_reduce/</link>
+      <pubDate>Wed, 13 Nov 2024 11:27:29 +0800</pubDate>
+      <guid>http://localhost:1313/posts/what_is_map_reduce/</guid>
+      <description>What is Map Reduce? Map Reduce is a programming model and an associated implementation for processing and generating large datasets. It is a distributed computing framework that allows processing of large datasets in a distributed manner across multiple nodes. It is used for processing large datasets that cannot fit into a single machine&amp;rsquo;s memory.
+简单来说，MapReduce是一种编程模型和一种关联的实现，用于处理和生成大型数据集。它是一个分布式计算框架，允许在多个节点上以分布式的方式处理大型数据集。它用于处理无法容纳在单个机器内存中的大型数据集。</description>
+    </item>
+  </channel>
+</rss>
