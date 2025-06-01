@@ -9,7 +9,7 @@
       <url>https://cdn.hasselblad.com/f/77891/2000x2000/e0ebd5ae15/31405-2.jpg</url>
       <link>https://cdn.hasselblad.com/f/77891/2000x2000/e0ebd5ae15/31405-2.jpg</link>
     </image>
-    <generator>Hugo -- 0.128.1</generator>
+    <generator>Hugo -- 0.147.7</generator>
     <language>en</language>
     <lastBuildDate>Fri, 25 Oct 2024 13:11:26 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/money/index.xml" rel="self" type="application/rss+xml" />
@@ -18,10 +18,39 @@
       <link>http://localhost:1313/posts/indie_hacker_thing/</link>
       <pubDate>Fri, 25 Oct 2024 13:11:26 +0800</pubDate>
       <guid>http://localhost:1313/posts/indie_hacker_thing/</guid>
-      <description>IDEAS put some ideas here
-Dot Files Manager A tool to manage your dot files easily. Multi-platform sync. Cheap and programmer-friendly. SaveIt A platform that aggregates and curates content from various sources. TOOLS recommend tools
-Saas Booster: saas tools for indie hackers ARTICLES some articles
-Interesting Stuff Transformer Explainer</description>
+      <description>&lt;h2 id=&#34;ideas&#34;&gt;IDEAS&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;put some ideas here&lt;/p&gt;&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;Dot Files Manager
+&lt;ul&gt;
+&lt;li&gt;A tool to manage your dot files easily.&lt;/li&gt;
+&lt;li&gt;Multi-platform sync.&lt;/li&gt;
+&lt;li&gt;Cheap and programmer-friendly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;SaveIt
+&lt;ul&gt;
+&lt;li&gt;A platform that aggregates and curates content from various sources.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tools&#34;&gt;TOOLS&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;recommend tools&lt;/p&gt;&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.notion.so/SaaS-101-142e43ff2bb88075a282f840ba0271fc&#34;&gt;Saas Booster: saas tools for indie hackers&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;ui&#34;&gt;UI&lt;/h2&gt;
+&lt;h3 id=&#34;icons&#34;&gt;Icons&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://icons.pqoqubbw.dev/&#34;&gt;pqoqubbw&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;articles&#34;&gt;ARTICLES&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;some articles&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;interesting-stuff&#34;&gt;Interesting Stuff&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://poloclub.github.io/transformer-explainer/&#34;&gt;Transformer Explainer&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

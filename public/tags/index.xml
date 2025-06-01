@@ -9,10 +9,45 @@
       <url>https://cdn.hasselblad.com/f/77891/2000x2000/e0ebd5ae15/31405-2.jpg</url>
       <link>https://cdn.hasselblad.com/f/77891/2000x2000/e0ebd5ae15/31405-2.jpg</link>
     </image>
-    <generator>Hugo -- 0.128.1</generator>
+    <generator>Hugo -- 0.147.7</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 20 Nov 2024 19:22:08 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jun 2025 22:55:01 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Funning Stuff</title>
+      <link>http://localhost:1313/tags/funning-stuff/</link>
+      <pubDate>Sun, 01 Jun 2025 22:55:01 +0800</pubDate>
+      <guid>http://localhost:1313/tags/funning-stuff/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Livephoto</title>
+      <link>http://localhost:1313/tags/livephoto/</link>
+      <pubDate>Sun, 01 Jun 2025 22:55:01 +0800</pubDate>
+      <guid>http://localhost:1313/tags/livephoto/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Macos</title>
+      <link>http://localhost:1313/tags/macos/</link>
+      <pubDate>Sun, 01 Jun 2025 22:55:01 +0800</pubDate>
+      <guid>http://localhost:1313/tags/macos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Sun, 01 Jun 2025 22:55:01 +0800</pubDate>
+      <guid>http://localhost:1313/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Video</title>
+      <link>http://localhost:1313/tags/video/</link>
+      <pubDate>Sun, 01 Jun 2025 22:55:01 +0800</pubDate>
+      <guid>http://localhost:1313/tags/video/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Lazyvim</title>
       <link>http://localhost:1313/tags/lazyvim/</link>

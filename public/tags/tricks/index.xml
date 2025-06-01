@@ -9,7 +9,7 @@
       <url>https://cdn.hasselblad.com/f/77891/2000x2000/e0ebd5ae15/31405-2.jpg</url>
       <link>https://cdn.hasselblad.com/f/77891/2000x2000/e0ebd5ae15/31405-2.jpg</link>
     </image>
-    <generator>Hugo -- 0.128.1</generator>
+    <generator>Hugo -- 0.147.7</generator>
     <language>en</language>
     <lastBuildDate>Fri, 15 Nov 2024 16:57:31 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/tricks/index.xml" rel="self" type="application/rss+xml" />
@@ -18,8 +18,30 @@
       <link>http://localhost:1313/posts/vim_related/</link>
       <pubDate>Fri, 15 Nov 2024 16:57:31 +0800</pubDate>
       <guid>http://localhost:1313/posts/vim_related/</guid>
-      <description>Vim 相关技巧 收集一些常用的 Vim 相关技巧，包括插件、快捷键、命令等。(using lazyvim)
-Nice Motion f{char}: 移动到下一个 {char} 出现的位置, 类似于 t{char} F{char}: 移动到上一个 {char} 出现的位置, 类似于 T{char} ; 和 ,: 重复上一次的 f, F, t, T 命令 Plugins lualine: vscode like status line gitblame: show git blame history Keymaps 1. todo-comments keymaps |Key|Description|Mode| |st | Todo |n| |sT (not working)| Todo/Fix/Fixme |n| |xt (not working)| Todo (Trouble) |n| |xT | Todo/Fix/Fixme (Trouble) |n| |[t | Previous Todo Comment |n| |]t | Next Todo Comment |n|</description>
+      <description>&lt;h2 id=&#34;vim-相关技巧&#34;&gt;Vim 相关技巧&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;收集一些常用的 Vim 相关技巧，包括插件、快捷键、命令等。(using lazyvim)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;nice-motion&#34;&gt;Nice Motion&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;f{char}&lt;/code&gt;: 移动到下一个 &lt;code&gt;{char}&lt;/code&gt; 出现的位置, 类似于 &lt;code&gt;t{char}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F{char}&lt;/code&gt;: 移动到上一个 &lt;code&gt;{char}&lt;/code&gt; 出现的位置, 类似于 &lt;code&gt;T{char}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;;&lt;/code&gt; 和 &lt;code&gt;,&lt;/code&gt;: 重复上一次的 f, F, t, T 命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;plugins&#34;&gt;Plugins&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;lualine: vscode like status line&lt;/li&gt;
+&lt;li&gt;gitblame: show git blame history&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;keymaps&#34;&gt;Keymaps&lt;/h3&gt;
+&lt;h4 id=&#34;1-todo-comments-keymaps&#34;&gt;1. todo-comments keymaps&lt;/h4&gt;
+&lt;p&gt;|Key|Description|Mode|
+|&lt;!-- raw HTML omitted --&gt;st | Todo |n|
+|&lt;!-- raw HTML omitted --&gt;sT (not working)| Todo/Fix/Fixme |n|
+|&lt;!-- raw HTML omitted --&gt;xt (not working)| Todo (Trouble) |n|
+|&lt;!-- raw HTML omitted --&gt;xT | Todo/Fix/Fixme (Trouble) |n|
+|&lt;code&gt;[t&lt;/code&gt; | Previous Todo Comment |n|
+|&lt;code&gt;]t&lt;/code&gt; | Next Todo Comment |n|&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

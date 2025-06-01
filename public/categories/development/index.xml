@@ -9,7 +9,7 @@
       <url>https://cdn.hasselblad.com/f/77891/2000x2000/e0ebd5ae15/31405-2.jpg</url>
       <link>https://cdn.hasselblad.com/f/77891/2000x2000/e0ebd5ae15/31405-2.jpg</link>
     </image>
-    <generator>Hugo -- 0.128.1</generator>
+    <generator>Hugo -- 0.147.7</generator>
     <language>en</language>
     <lastBuildDate>Thu, 24 Oct 2024 15:53:19 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/development/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +18,11 @@
       <link>http://localhost:1313/posts/how_to_install_electron/</link>
       <pubDate>Thu, 24 Oct 2024 15:53:19 +0800</pubDate>
       <guid>http://localhost:1313/posts/how_to_install_electron/</guid>
-      <description>put this in your ~/.npmrc file registry=https://registry.npmmirror.com electron_mirror=https://cdn.npmmirror.com/binaries/electron/ electron_builder_binaries_mirror=https://npmmirror.com/mirrors/electron-builder-binaries/ </description>
+      <description>&lt;h2 id=&#34;put-this-in-your-npmrc-file&#34;&gt;put this in your &lt;code&gt;~/.npmrc&lt;/code&gt; file&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;registry&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;https://registry.npmmirror.com
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;electron_mirror&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;https://cdn.npmmirror.com/binaries/electron/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;electron_builder_binaries_mirror&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;https://npmmirror.com/mirrors/electron-builder-binaries/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

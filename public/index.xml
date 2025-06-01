@@ -9,71 +9,239 @@
       <url>https://cdn.hasselblad.com/f/77891/2000x2000/e0ebd5ae15/31405-2.jpg</url>
       <link>https://cdn.hasselblad.com/f/77891/2000x2000/e0ebd5ae15/31405-2.jpg</link>
     </image>
-    <generator>Hugo -- 0.128.1</generator>
+    <generator>Hugo -- 0.147.7</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Dec 2024 19:32:11 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jun 2025 22:55:01 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to convert a video to live photo on MacOS?</title>
+      <link>http://localhost:1313/posts/video-to-livephoto/</link>
+      <pubDate>Sun, 01 Jun 2025 22:55:01 +0800</pubDate>
+      <guid>http://localhost:1313/posts/video-to-livephoto/</guid>
+      <description>&lt;h1 id=&#34;how-to-convert-a-video-to-live-photo-on-macos&#34;&gt;How to convert a video to live photo on MacOS?&lt;/h1&gt;
+&lt;figure class=&#34;align-center &#34;&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;assets/images/live.png#center&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;what&#34;&gt;What?&lt;/h2&gt;
+&lt;p&gt;这是一个把视频转换为live photo的工具。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;前提&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;MacOS 系统&lt;/li&gt;
+&lt;li&gt;ffmpeg 工具&lt;/li&gt;
+&lt;li&gt;Python 3.8+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;首先 安装下 pypi 包&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install -U video2live
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;然后运行命令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;video2live ./inifity.mp4 output
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/video2live-demo.png&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;转换后的结果会放到指定目录下,同时默认会导入到照片中合成&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;why&#34;&gt;Why?&lt;/h2&gt;
+&lt;p&gt;最近很
+多社交平台都开始支持live图格式，而且之前看别人把非常炫酷的延时视频制作为live图，感觉非常有趣，所以就想着写个工具来玩玩。&lt;/p&gt;
+&lt;h2 id=&#34;how&#34;&gt;How?&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 moviepy 提取视频的第一帧图片作为封面&lt;/li&gt;
+&lt;li&gt;使用 ffmpeg 把视频转为mov格式&lt;/li&gt;
+&lt;li&gt;最终用 makelive 为 mov 和 jpeg 添加 metadata 信息，导出为同名但不同格式的文件。&lt;/li&gt;
+&lt;li&gt;最后使用 apple 脚本，把文件导入到照片中合成。&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
     <item>
       <title>Prompts</title>
       <link>http://localhost:1313/posts/prompts/</link>
       <pubDate>Thu, 05 Dec 2024 19:32:11 +0800</pubDate>
       <guid>http://localhost:1313/posts/prompts/</guid>
-      <description>1. 元-反-空 role：你擅长使用「元-反-空」高阶逻辑： 元：二阶操作，作者观点背后的观点是什么？ 反：它的反面证据是什么 空：跳出系统，其他领域是如何看待的 instruction(written in linux PIPE):用户输入|作者观点与子观点|拆解明托金字塔论证结构|寻找元观点|反面证据、反面观点|空：跳出系统|&amp;lt;元反空洞察：元反空各提炼一句&amp;gt; &amp;lt;元反空洞察&amp;gt;|提炼三个值得注意的观点|风格化（Paul Graham） rule: PIPE intermediate results in one &amp;lt;thinking&amp;gt;&amp;lt;/thinking&amp;gt;. Output final result with no comment(using Chinese punctuation marks, no emoji or ~). </description>
+      <description>&lt;h2 id=&#34;1-元-反-空&#34;&gt;1. 元-反-空&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-md&#34; data-lang=&#34;md&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;role：你擅长使用「元-反-空」高阶逻辑：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;元：二阶操作，作者观点背后的观点是什么？
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;反：它的反面证据是什么
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;空：跳出系统，其他领域是如何看待的
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;instruction(written in linux PIPE):用户输入|作者观点与子观点|拆解明托金字塔论证结构|寻找元观点|反面证据、反面观点|空：跳出系统|&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;元反空洞察&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;：&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;元反空各提炼一句&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;元反空洞察&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;|提炼三个值得注意的观点|风格化（Paul Graham）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rule: PIPE intermediate results in one &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;thinking&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;thinking&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;. Output final result with no comment(using Chinese punctuation marks, no emoji or ~).
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Eat Some LazyVim Snacks</title>
       <link>http://localhost:1313/posts/lazyvim_snacks/</link>
       <pubDate>Wed, 20 Nov 2024 19:22:08 +0800</pubDate>
       <guid>http://localhost:1313/posts/lazyvim_snacks/</guid>
-      <description>How to install color scripts and hub? Hub can be install by using brew On MacOS you can install hub by using brew:
-brew install hub Color scripts can be installed by shell-color-scripts git clone https://gitlab.com/dwt1/shell-color-scripts.git cd shell-color-scripts sudo make install # optional for Removal sudo make uninstall # optional for zsh completion sudo cp completions/_colorscript /usr/share/zsh/site-functions # optional for fish shell completion sudo cp completions/colorscript.fish /usr/share/fish/vendor_completions.d </description>
+      <description>&lt;h2 id=&#34;how-to-install-color-scripts-and-hub&#34;&gt;How to install color scripts and hub?&lt;/h2&gt;
+&lt;h3 id=&#34;hub-can-be-install-by-using-brew&#34;&gt;Hub can be install by using brew&lt;/h3&gt;
+&lt;p&gt;On MacOS you can install hub by using brew:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;brew install hub
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;color-scripts-can-be-installed-by-shell-color-scripts&#34;&gt;Color scripts can be installed by &lt;a href=&#34;https://gitlab.com/dwt1/shell-color-scripts&#34;&gt;shell-color-scripts&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://gitlab.com/dwt1/shell-color-scripts.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; shell-color-scripts
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo make install
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# optional for Removal&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo make uninstall
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# optional for zsh completion&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cp completions/_colorscript /usr/share/zsh/site-functions
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# optional for fish shell completion&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cp completions/colorscript.fish /usr/share/fish/vendor_completions.d
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>Vim 相关技巧| Vim Tricks</title>
       <link>http://localhost:1313/posts/vim_related/</link>
       <pubDate>Fri, 15 Nov 2024 16:57:31 +0800</pubDate>
       <guid>http://localhost:1313/posts/vim_related/</guid>
-      <description>Vim 相关技巧 收集一些常用的 Vim 相关技巧，包括插件、快捷键、命令等。(using lazyvim)
-Nice Motion f{char}: 移动到下一个 {char} 出现的位置, 类似于 t{char} F{char}: 移动到上一个 {char} 出现的位置, 类似于 T{char} ; 和 ,: 重复上一次的 f, F, t, T 命令 Plugins lualine: vscode like status line gitblame: show git blame history Keymaps 1. todo-comments keymaps |Key|Description|Mode| |st | Todo |n| |sT (not working)| Todo/Fix/Fixme |n| |xt (not working)| Todo (Trouble) |n| |xT | Todo/Fix/Fixme (Trouble) |n| |[t | Previous Todo Comment |n| |]t | Next Todo Comment |n|</description>
+      <description>&lt;h2 id=&#34;vim-相关技巧&#34;&gt;Vim 相关技巧&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;收集一些常用的 Vim 相关技巧，包括插件、快捷键、命令等。(using lazyvim)&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;nice-motion&#34;&gt;Nice Motion&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;f{char}&lt;/code&gt;: 移动到下一个 &lt;code&gt;{char}&lt;/code&gt; 出现的位置, 类似于 &lt;code&gt;t{char}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;F{char}&lt;/code&gt;: 移动到上一个 &lt;code&gt;{char}&lt;/code&gt; 出现的位置, 类似于 &lt;code&gt;T{char}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;;&lt;/code&gt; 和 &lt;code&gt;,&lt;/code&gt;: 重复上一次的 f, F, t, T 命令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;plugins&#34;&gt;Plugins&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;lualine: vscode like status line&lt;/li&gt;
+&lt;li&gt;gitblame: show git blame history&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;keymaps&#34;&gt;Keymaps&lt;/h3&gt;
+&lt;h4 id=&#34;1-todo-comments-keymaps&#34;&gt;1. todo-comments keymaps&lt;/h4&gt;
+&lt;p&gt;|Key|Description|Mode|
+|&lt;!-- raw HTML omitted --&gt;st | Todo |n|
+|&lt;!-- raw HTML omitted --&gt;sT (not working)| Todo/Fix/Fixme |n|
+|&lt;!-- raw HTML omitted --&gt;xt (not working)| Todo (Trouble) |n|
+|&lt;!-- raw HTML omitted --&gt;xT | Todo/Fix/Fixme (Trouble) |n|
+|&lt;code&gt;[t&lt;/code&gt; | Previous Todo Comment |n|
+|&lt;code&gt;]t&lt;/code&gt; | Next Todo Comment |n|&lt;/p&gt;</description>
     </item>
     <item>
       <title>What is map reduce?</title>
       <link>http://localhost:1313/posts/what_is_map_reduce/</link>
       <pubDate>Wed, 13 Nov 2024 11:27:29 +0800</pubDate>
       <guid>http://localhost:1313/posts/what_is_map_reduce/</guid>
-      <description>What is Map Reduce? Map Reduce is a programming model and an associated implementation for processing and generating large datasets. It is a distributed computing framework that allows processing of large datasets in a distributed manner across multiple nodes. It is used for processing large datasets that cannot fit into a single machine&amp;rsquo;s memory.
-简单来说，MapReduce是一种编程模型和一种关联的实现，用于处理和生成大型数据集。它是一个分布式计算框架，允许在多个节点上以分布式的方式处理大型数据集。它用于处理无法容纳在单个机器内存中的大型数据集。</description>
+      <description>&lt;h2 id=&#34;what-is-map-reduce&#34;&gt;What is Map Reduce?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Map Reduce is a programming model and an associated implementation for processing and generating large datasets. It is a distributed computing framework that allows processing of large datasets in a distributed manner across multiple nodes. It is used for processing large datasets that cannot fit into a single machine&amp;rsquo;s memory.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;简单来说，MapReduce是一种编程模型和一种关联的实现，用于处理和生成大型数据集。它是一个分布式计算框架，允许在多个节点上以分布式的方式处理大型数据集。它用于处理无法容纳在单个机器内存中的大型数据集。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Indie Hacker Thing</title>
       <link>http://localhost:1313/posts/indie_hacker_thing/</link>
       <pubDate>Fri, 25 Oct 2024 13:11:26 +0800</pubDate>
       <guid>http://localhost:1313/posts/indie_hacker_thing/</guid>
-      <description>IDEAS put some ideas here
-Dot Files Manager A tool to manage your dot files easily. Multi-platform sync. Cheap and programmer-friendly. SaveIt A platform that aggregates and curates content from various sources. TOOLS recommend tools
-Saas Booster: saas tools for indie hackers ARTICLES some articles
-Interesting Stuff Transformer Explainer</description>
+      <description>&lt;h2 id=&#34;ideas&#34;&gt;IDEAS&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;put some ideas here&lt;/p&gt;&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;Dot Files Manager
+&lt;ul&gt;
+&lt;li&gt;A tool to manage your dot files easily.&lt;/li&gt;
+&lt;li&gt;Multi-platform sync.&lt;/li&gt;
+&lt;li&gt;Cheap and programmer-friendly.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;SaveIt
+&lt;ul&gt;
+&lt;li&gt;A platform that aggregates and curates content from various sources.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;tools&#34;&gt;TOOLS&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;recommend tools&lt;/p&gt;&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.notion.so/SaaS-101-142e43ff2bb88075a282f840ba0271fc&#34;&gt;Saas Booster: saas tools for indie hackers&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;ui&#34;&gt;UI&lt;/h2&gt;
+&lt;h3 id=&#34;icons&#34;&gt;Icons&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://icons.pqoqubbw.dev/&#34;&gt;pqoqubbw&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;articles&#34;&gt;ARTICLES&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;some articles&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;interesting-stuff&#34;&gt;Interesting Stuff&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://poloclub.github.io/transformer-explainer/&#34;&gt;Transformer Explainer&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>how to install electron</title>
       <link>http://localhost:1313/posts/how_to_install_electron/</link>
       <pubDate>Thu, 24 Oct 2024 15:53:19 +0800</pubDate>
       <guid>http://localhost:1313/posts/how_to_install_electron/</guid>
-      <description>put this in your ~/.npmrc file registry=https://registry.npmmirror.com electron_mirror=https://cdn.npmmirror.com/binaries/electron/ electron_builder_binaries_mirror=https://npmmirror.com/mirrors/electron-builder-binaries/ </description>
+      <description>&lt;h2 id=&#34;put-this-in-your-npmrc-file&#34;&gt;put this in your &lt;code&gt;~/.npmrc&lt;/code&gt; file&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;registry&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;https://registry.npmmirror.com
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;electron_mirror&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;https://cdn.npmmirror.com/binaries/electron/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;electron_builder_binaries_mirror&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;https://npmmirror.com/mirrors/electron-builder-binaries/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>OpenAI Prompt Instruction</title>
       <link>http://localhost:1313/posts/openai_prompt_instruction/</link>
       <pubDate>Thu, 24 Oct 2024 15:51:50 +0800</pubDate>
       <guid>http://localhost:1313/posts/openai_prompt_instruction/</guid>
-      <description>&amp;lt;context&amp;gt; Please analyze the writing style, tone, and structure in the following examples. Focus on elements like vocabulary choice, sentence complexity, pacing, and overall voice. &amp;lt;/context&amp;gt; &amp;lt;examples&amp;gt; [Insert your writing samples here, add delimiters between them as well] &amp;lt;/examples&amp;gt; &amp;lt;instruction&amp;gt; Generate a [type of content, e.g., &amp;#34;informative article&amp;#34; or &amp;#34;blog post&amp;#34;] about [specific topic]. The content should match the style, tone, and structure of the provided examples. Make sure it is original, engaging, and suitable for [mention the target audience or purpose].</description>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;context&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Please analyze the writing style, tone, and structure in the following examples. Focus on elements like vocabulary choice, sentence complexity, pacing, and overall voice.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/context&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;examples&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[Insert your writing samples here, add delimiters between them as well]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/examples&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;instruction&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Generate a [type of content, e.g., &amp;#34;informative article&amp;#34; or &amp;#34;blog post&amp;#34;] about [specific topic]. The content should match the style, tone, and structure of the provided examples. Make sure it is original, engaging, and suitable for [mention the target audience or purpose].
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/instruction&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     <item>
       <title>结构化 prompt 示例</title>
       <link>http://localhost:1313/posts/resume_prompt/</link>
       <pubDate>Tue, 23 Jul 2024 15:18:18 +0800</pubDate>
       <guid>http://localhost:1313/posts/resume_prompt/</guid>
-      <description># Role: 简历优化专家 ## Profile - Author: WDF - Version: 0.0.1 - Description: 一个专业的简历优化专家，帮助候选人分析简历，提高简历的质量，尽力提升获得面试的机会 ### 擅长分析简历 1. 根据 SWAT 法则，优化简历工作内容的结构 2. 在专业的角度分析工作技能的说辞 ### 擅长扩写简历 1. 根据候选人提供的工作内容描述，总结，归纳，扩展这个工作内容可能有的亮点 2. 根据候选人提供的技能要点，强调候选人可能具备的工作能力，并在简历上体现出来 ## Rules 1. 言辞专业，干练 ## Workflow 1. 让用户提供简历内容 2. 分析简历 3. 输出分析结果+优化结果 </description>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-md&#34; data-lang=&#34;md&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;# Role: 简历优化专家
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gh&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;## Profile
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; Author: WDF
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; Version: 0.0.1
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;-&lt;/span&gt; Description: 一个专业的简历优化专家，帮助候选人分析简历，提高简历的质量，尽力提升获得面试的机会
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;### 擅长分析简历
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;1.&lt;/span&gt; 根据 SWAT 法则，优化简历工作内容的结构
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;2.&lt;/span&gt; 在专业的角度分析工作技能的说辞
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;### 擅长扩写简历
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;1.&lt;/span&gt; 根据候选人提供的工作内容描述，总结，归纳，扩展这个工作内容可能有的亮点
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;2.&lt;/span&gt; 根据候选人提供的技能要点，强调候选人可能具备的工作能力，并在简历上体现出来
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;## Rules
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;1.&lt;/span&gt; 言辞专业，干练
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;## Workflow
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;gu&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;1.&lt;/span&gt; 让用户提供简历内容
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;2.&lt;/span&gt; 分析简历
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;3.&lt;/span&gt; 输出分析结果+优化结果
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

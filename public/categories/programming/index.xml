@@ -9,17 +9,62 @@
       <url>https://cdn.hasselblad.com/f/77891/2000x2000/e0ebd5ae15/31405-2.jpg</url>
       <link>https://cdn.hasselblad.com/f/77891/2000x2000/e0ebd5ae15/31405-2.jpg</link>
     </image>
-    <generator>Hugo -- 0.128.1</generator>
+    <generator>Hugo -- 0.147.7</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 13 Nov 2024 11:27:29 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jun 2025 22:55:01 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to convert a video to live photo on MacOS?</title>
+      <link>http://localhost:1313/posts/video-to-livephoto/</link>
+      <pubDate>Sun, 01 Jun 2025 22:55:01 +0800</pubDate>
+      <guid>http://localhost:1313/posts/video-to-livephoto/</guid>
+      <description>&lt;h1 id=&#34;how-to-convert-a-video-to-live-photo-on-macos&#34;&gt;How to convert a video to live photo on MacOS?&lt;/h1&gt;
+&lt;figure class=&#34;align-center &#34;&gt;
+    &lt;img loading=&#34;lazy&#34; src=&#34;assets/images/live.png#center&#34;/&gt; 
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;what&#34;&gt;What?&lt;/h2&gt;
+&lt;p&gt;这是一个把视频转换为live photo的工具。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;前提&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;MacOS 系统&lt;/li&gt;
+&lt;li&gt;ffmpeg 工具&lt;/li&gt;
+&lt;li&gt;Python 3.8+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;首先 安装下 pypi 包&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install -U video2live
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;然后运行命令&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;video2live ./inifity.mp4 output
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/video2live-demo.png&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;转换后的结果会放到指定目录下,同时默认会导入到照片中合成&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;why&#34;&gt;Why?&lt;/h2&gt;
+&lt;p&gt;最近很
+多社交平台都开始支持live图格式，而且之前看别人把非常炫酷的延时视频制作为live图，感觉非常有趣，所以就想着写个工具来玩玩。&lt;/p&gt;
+&lt;h2 id=&#34;how&#34;&gt;How?&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 moviepy 提取视频的第一帧图片作为封面&lt;/li&gt;
+&lt;li&gt;使用 ffmpeg 把视频转为mov格式&lt;/li&gt;
+&lt;li&gt;最终用 makelive 为 mov 和 jpeg 添加 metadata 信息，导出为同名但不同格式的文件。&lt;/li&gt;
+&lt;li&gt;最后使用 apple 脚本，把文件导入到照片中合成。&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
     <item>
       <title>What is map reduce?</title>
       <link>http://localhost:1313/posts/what_is_map_reduce/</link>
       <pubDate>Wed, 13 Nov 2024 11:27:29 +0800</pubDate>
       <guid>http://localhost:1313/posts/what_is_map_reduce/</guid>
-      <description>What is Map Reduce? Map Reduce is a programming model and an associated implementation for processing and generating large datasets. It is a distributed computing framework that allows processing of large datasets in a distributed manner across multiple nodes. It is used for processing large datasets that cannot fit into a single machine&amp;rsquo;s memory.
-简单来说，MapReduce是一种编程模型和一种关联的实现，用于处理和生成大型数据集。它是一个分布式计算框架，允许在多个节点上以分布式的方式处理大型数据集。它用于处理无法容纳在单个机器内存中的大型数据集。</description>
+      <description>&lt;h2 id=&#34;what-is-map-reduce&#34;&gt;What is Map Reduce?&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Map Reduce is a programming model and an associated implementation for processing and generating large datasets. It is a distributed computing framework that allows processing of large datasets in a distributed manner across multiple nodes. It is used for processing large datasets that cannot fit into a single machine&amp;rsquo;s memory.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;简单来说，MapReduce是一种编程模型和一种关联的实现，用于处理和生成大型数据集。它是一个分布式计算框架，允许在多个节点上以分布式的方式处理大型数据集。它用于处理无法容纳在单个机器内存中的大型数据集。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
