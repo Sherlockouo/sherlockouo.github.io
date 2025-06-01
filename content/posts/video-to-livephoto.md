@@ -47,3 +47,7 @@ video2live ./inifity.mp4 output
 2. 使用 ffmpeg 把视频转为mov格式
 3. 最终用 makelive 为 mov 和 jpeg 添加 metadata 信息，导出为同名但不同格式的文件。
 4. 最后使用 apple 脚本，把文件导入到照片中合成。
+
+## 项目地址
+
+欢迎 star 和 fork [video2live](https://github.com/sherlockouo/video2live)
